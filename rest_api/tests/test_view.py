@@ -3,6 +3,11 @@ from rest_framework.test import APIClient
 
 @pytest.mark.django_db
 def test_todos_petshops():
+    # Arrange
     cliente = APIClient()
+    
+    # Act
     resposta = cliente.get('/api/petshop')
-    assert len(resposta.data['results']) == 0
+    
+    #Assert
+    assert resposta.data['count'] == 0

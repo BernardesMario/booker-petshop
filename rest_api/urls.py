@@ -1,5 +1,5 @@
 from django.urls import path
-from rest_api.views import hello_world,ListaEspeciesPetOutros, ListaEspeciesPetCachorro,ListaEspeciesPetGato, PetshopModelViewSet, AgendamentoModelViewSet, AgendamentosHojeModelViewSet, AgendamentosSemanaModelViewSet, EspeciesViewSet
+from rest_api.views import ListaEspeciesPetOutros, ListaEspeciesPetCachorro,ListaEspeciesPetGato, PetshopModelViewSet, AgendamentoModelViewSet, AgendamentosHojeModelViewSet, AgendamentosSemanaModelViewSet, EspeciesViewSet
 from rest_framework.routers import SimpleRouter
 
 app_name = 'rest_api'
@@ -13,9 +13,7 @@ router.register('gatos', ListaEspeciesPetGato)
 router.register('cachorro', ListaEspeciesPetCachorro)
 router.register('outros', ListaEspeciesPetOutros)
 
-urlpatterns = [
-    path('hello_world', hello_world, name='hello_world_api'),
-    ]
+urlpatterns = []
 
 urlpatterns += router.urls
 

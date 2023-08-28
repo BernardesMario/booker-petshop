@@ -43,12 +43,6 @@ class EspeciesViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = EspeciesPetSerializer
     filterset_fields = ['especie']
 
-@api_view(['GET','POST']) #metodo GET e POST acessam API
-def hello_world(request):
-    if request.method == 'POST':
-        return Response({'mensagem': f'Hello, {request.data.get("Name")}'})
-    return Response({'hello': 'world API'})
-
 class ListaEspeciesPetGato(ReadOnlyModelViewSet):
     especie_alvo = EspeciesPet.objects.filter(especie='Gato').first()
     queryset = Reserva.objects.filter(especie=especie_alvo)
